@@ -36,7 +36,7 @@ namespace PhantomChaseVR
         {
             { TransportType.Bus,           new Color(0.894f, 0.325f, 0.541f) },  // #E4538A
             { TransportType.Taxi,          new Color(0.961f, 0.620f, 0.043f) },  // #F59E0B
-            { TransportType.Train,         new Color(0.961f, 0.620f, 0.043f) },  // bright yellow
+            { TransportType.Train,         new Color(0.980f, 0.753f, 0.184f) },  // #FAC02F — brighter gold, distinct from taxi
             { TransportType.UndergroundA,  new Color(0.024f, 0.714f, 0.831f) },  // #06B6D4
             { TransportType.UndergroundB,  new Color(0.659f, 0.333f, 0.969f) },  // #A855F7
         };

@@ -181,7 +181,7 @@ namespace PhantomChaseVR
             if (nearbyNames.Count == 0)
             {
                 nearbyPlayersText.text = "No players nearby";
-                nearbyPlayersText.color = Color.grey;
+                nearbyPlayersText.color = Color.gray;
             }
             else
             {
