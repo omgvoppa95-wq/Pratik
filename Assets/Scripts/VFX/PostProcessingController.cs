@@ -148,10 +148,16 @@ namespace PhantomChaseVR
 
         /// <summary>
         /// Ghost silhouette flash at a specific world position.
-        /// Similar to reveal but localised and shorter.
+        /// The <paramref name="worldPos"/> is reserved for future use with
+        /// localised screen-space effects (e.g., distortion around the
+        /// phantom's projected position).  Currently triggers a global bleed.
         /// </summary>
         public void TriggerVisionBleedEffect(Vector3 worldPos)
         {
+            // worldPos kept in signature for API compatibility with GameManager RPCs.
+            // Future: convert to viewport space for localised distortion.
+            _ = worldPos;
+
             if (activeRevealCoroutine != null)
             {
                 StopCoroutine(activeRevealCoroutine);

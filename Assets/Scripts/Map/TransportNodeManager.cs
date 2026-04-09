@@ -251,13 +251,18 @@ namespace PhantomChaseVR
             {
                 NodeData data = kv.Value;
                 GameObject prefab = ChoosePrefab(data);
-                if (prefab == null)
+                GameObject go;
+                if (prefab != null)
+                {
+                    go = Instantiate(prefab, data.worldPosition, Quaternion.identity, transform);
+                }
+                else
                 {
                     Debug.LogWarning($"[TransportNodeManager] No prefab assigned for node {data.id}. Using empty GO.");
-                    prefab = new GameObject($"Node_{data.id}_Fallback");
+                    go = new GameObject($"Node_{data.id}");
+                    go.transform.SetParent(transform);
+                    go.transform.position = data.worldPosition;
                 }
-
-                GameObject go = Instantiate(prefab, data.worldPosition, Quaternion.identity, transform);
                 go.name = $"Node_{data.id}";
 
                 TransportNode tn = go.GetComponent<TransportNode>();

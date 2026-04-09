@@ -103,7 +103,7 @@ namespace PhantomChaseVR
             foreach (Vector3 zonePos in crowdBlendPositions)
             {
                 int extraCount = (crowdBlendMultiplier - 1) * 2; // extra NPCs per zone
-                for (int i = 0; i < extraCount && spawned < totalNPCs * 2; i++)
+                for (int i = 0; i < extraCount && spawned < totalNPCs; i++)
                 {
                     Vector3 spawnPos;
                     if (TryGetNavMeshPosition(zonePos, minSpawnRadius * 2f, out spawnPos))
